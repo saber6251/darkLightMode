@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primaryColor: white;
+    --secondaryColor: black;
+    --textColor:white;
+}
+.container{
+    width: 1170px;
+    margin: auto;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: var(--primaryColor);
+    transition: .45s;
+}
+
+/* common css ends */
+
+/* nav starts */
+nav{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px 0;
+}
+nav button {
+    font-size: 25px;
+    background-color: var(--secondaryColor);
+    padding: 10px;
+    outline: 0;
+    border: none;
+    color: var(--primaryColor);
+    cursor: pointer;
+}
+
+/* nav ends */
+
+/* sidebar */
+
+.aside{
+    inset:0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .15s;
+}
+.aside .sidebarCnt{
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--primaryColor);
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    transform: translateX(-100%);
+    transition: .47s;
+}
+.aside.active{
+    opacity: 1;
+    visibility: visible;
+}
+.aside.active .sidebarCnt{
+    transform: translateX(0%);
+}
+.aside .sidebarCnt ul li a{
+    color: var(--secondaryColor);
+    display: inline-block;
+    padding: 20px 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 20px;
+}
+.sidebarCnt .btn{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    background-color: var(--secondaryColor);
+    color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* sidebar ends */
+
+/* dark */
+
+.darkArea{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#dark{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.darkArea h1{
+    font-size: 70px;
+    font-family:  sans-serif;
+    margin-right: 20px;
+    color: var(--secondaryColor);
+}
+.darkbtn{
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    display: inline-block;
+}
+.darkbtn .sun{
+    width: 100%;
+    background-color: #E59D1D;
+    display: inline-block;
+    line-height: 60px;
+    color: black;
+    font-size: 18px;
+    transition: .47s;
+}
+.darkbtn .moon{
+    height: 100%;
+    width: 100%;
+    background-color: #040B3E;
+    display: inline-block;
+    line-height: 60px;
+    color: white;
+    font-size: 18px;
+    transition: .33s;
+}
+body.darkmode{
+    --primaryColor: black;
+    --secondaryColor: white;
+    --textColor:black ;
+    transition: .45s;
+}
+body.darkmode .darkbtn .moon{
+ margin-top: -60px ;
+}
+
+
+/* dark ends */
